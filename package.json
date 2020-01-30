@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "aws-sdk": "^2.610.0"
-  }
+  },
+  "name": "butterfly-info",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "wesley <robinson.wesleyd@gmail.com>",
+  "license": "MIT"
 }

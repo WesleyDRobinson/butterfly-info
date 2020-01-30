@@ -1,4 +1,4 @@
-import AWS from "aws-sdk"
+const AWS = require("aws-sdk")
 
 const dynamodb = new AWS.DynamoDB({
   region: 'us-east-1',
@@ -8,7 +8,7 @@ const dynamodb = new AWS.DynamoDB({
 
 const { unmarshall } = AWS.DynamoDB.Converter
 
-export default async function query(params, TableName = "butterfly-info") {
+async function query(params, TableName = "butterfly-info") {
   return new Promise((resolve, reject) => {
     const { subjects = ['butterfly-info'] } = params
 
@@ -29,3 +29,5 @@ export default async function query(params, TableName = "butterfly-info") {
     })
   })
 }
+
+module.exports = query

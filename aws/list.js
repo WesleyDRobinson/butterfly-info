@@ -7,7 +7,7 @@
 // --expression-attribute-values '{":gen":{"S":"Sci-Fi"}}' \
 // --page-size 100  \
 // --debug
-import AWS from "aws-sdk"
+const AWS = require("aws-sdk")
 
 const dynamodb = new AWS.DynamoDB({
   region: 'us-east-1',
@@ -17,7 +17,7 @@ const dynamodb = new AWS.DynamoDB({
 
 const { unmarshall } = AWS.DynamoDB.Converter
 
-export default async function list(TableName = "butterfly-info") {
+async function list(TableName = "butterfly-info") {
   return new Promise((resolve, reject) => {
     const scanParams = {
       TableName,
@@ -29,3 +29,5 @@ export default async function list(TableName = "butterfly-info") {
     )
   })
 }
+
+module.exports = list
