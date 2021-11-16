@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.610.0"
+    "aws-sdk": "^2.814.0"
   },
   "name": "butterfly-info",
   "version": "0.1.0",
